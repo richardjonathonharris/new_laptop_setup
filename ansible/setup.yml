@@ -1,0 +1,8 @@
+---
+- name: Setup | Setup playbook
+  hosts: all
+  tasks:
+    - name: Config Files | Ensure .config directory exists
+      file:
+        path: "{{ config_dir }}"
+        state: directory
