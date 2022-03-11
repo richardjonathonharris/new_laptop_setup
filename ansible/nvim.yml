@@ -1,0 +1,7 @@
+---
+- name: symlink nvim config
+  file:
+    src: "{{ dotfiles_dir }}/nvim"
+    dest: "{{ config_dir }}/nvim"
+    state: link
+    force: true

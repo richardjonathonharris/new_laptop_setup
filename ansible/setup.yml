@@ -6,3 +6,4 @@
       file:
         path: "{{ config_dir }}"
         state: directory
+    - include_tasks: nvim.yml
