@@ -1,3 +1,13 @@
 config_dir: "{{ ansible_env.HOME }}/.config"
 dotfiles_repo_dir: "{{ ansible_env.HOME }}/code/new_laptop_setup"
 dotfiles_dir: "{{ dotfiles_repo_dir }}/dotfiles"
+
+homebrew_packages:
+  - tmux
+  - nodejs
+  - node
+  - chruby
+  - ruby-install
+  - npm
+  - go
+  - ag

@@ -6,4 +6,13 @@
       file:
         path: "{{ config_dir }}"
         state: directory
+    - name: Config Files | Symlink files
+      include_tasks: symlink_home_files.yml
+      vars:
+        config_type: "{{ config_item.config_type }}"
+      loop:
+        - config_type: tmux
+      loop_control:
+        loop_var: config_item
+    #- include_tasks: homebrew.yml
     - include_tasks: nvim.yml
