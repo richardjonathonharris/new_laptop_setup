@@ -1,0 +1,9 @@
+{
+    "workbench.startupEditor": "none",
+    "svelte.enable-ts-plugin": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "gitlens.hovers.currentLine.over": "line",
+    "terminal.integrated.scrollback": 10000,
+    "bracketPairColorizer.depreciation-notice": false,
+    "workbench.sideBar.location": "right"
+}

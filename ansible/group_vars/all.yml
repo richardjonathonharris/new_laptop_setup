@@ -2,6 +2,25 @@ config_dir: "{{ ansible_env.HOME }}/.config"
 dotfiles_repo_dir: "{{ ansible_env.HOME }}/code/new_laptop_setup"
 dotfiles_dir: "{{ dotfiles_repo_dir }}/dotfiles"
 
+homebrew_casks:
+  - 1password
+  - cyberduck
+  - db-browser-for-sqlite
+  - discord
+  - displaylink
+  - divvy
+  - docker
+  - fantastical
+  - google-chrome
+  - iterm2
+  - notion
+  - pritunl
+  - slack
+  - spotify
+  - sublime-text
+  - todoist
+  - visual-studio-code
+
 homebrew_packages:
   - tmux
   - nodejs
@@ -13,3 +32,34 @@ homebrew_packages:
   - ag
   - rg
   - fd
+  - autoconf
+  - automake
+  - aws-iam-authenticator
+  - awscli
+  - coreutils
+  - curl
+  - fzf
+  - htop
+  - libtool
+  - libxslt
+  - libyaml
+  - mas
+  - openssl
+  - postgresql
+  - readline
+  - sqlite3
+  - vim
+  - nvim
+  - zsh
+  - yarn
+  - rbenv
+  - conda
+  - docker
+  - docker-compose
+  - code
+
+vscode_extensions:
+  - PKief.material-icon-theme
+  - vscodevim.vim
+  - wingrunr21.vscode-ruby
+  - rebornix.ruby

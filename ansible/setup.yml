@@ -2,6 +2,10 @@
 - name: Setup | Setup playbook
   hosts: all
   tasks:
+    # - include_tasks: homebrew.yml
+    # - include_tasks: nvim.yml
+    # - include_tasks: zsh.yml
+    - include_tasks: vscode.yml
     - name: Config Files | Ensure .config directory exists
       file:
         path: "{{ config_dir }}"
@@ -12,7 +16,7 @@
         config_type: "{{ config_item.config_type }}"
       loop:
         - config_type: tmux
+        - config_type: nvim
+        - config_type: git
       loop_control:
         loop_var: config_item
-    - include_tasks: homebrew.yml
-    - include_tasks: nvim.yml

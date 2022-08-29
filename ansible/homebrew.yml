@@ -1,10 +1,35 @@
 ---
-- name: Packages | Update Homebrew
-  homebrew: 
-    update_homebrew: yes
-    upgrade_all: yes
+- name: Install homebrew_packages
+  include_role:
+    name: geerlingguy.mac.homebrew
 
-- name: Packages | Brew Install Packages
-  homebrew:
-    name: "{{ homebrew_packages }}"
-    state: latest
+- name: Ensure homebrew bin in path
+  ansible.builtin.lineinfile:
+    path: /etc/paths
+    state: present
+    line: '/opt/homebrew/bin'
+  become: true
+  become_user: root
+
+- name: Add custom homebrew repos
+  community.general.homebrew_tap:
+    name: [
+      adoptopenjdk/openjdk,
+      fishtown-analytics/dbt,
+      homebrew/cask-versions,
+      thoughtbot/formulae,
+      weaveworks/tap,
+    ]
+
+- name: Install core programs via brew casks
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  ignore_errors: yes
+  with_items: "{{ homebrew_casks }}"
+
+- name: "Install core packages via homebrew"
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+    update_homebrew: yes
+  with_items: "{{ homebrew_packages }}"

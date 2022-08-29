@@ -1,0 +1,10 @@
+[core]
+	excludesfile = /Users/richard.harris/.gitignore
+[user]
+	name = Richard Harris
+	email = richard.harris@provi.com
+[alias]
+	st = status
+	co = checkout
+[init]
+	defaultBranch = main
