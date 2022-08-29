@@ -14,5 +14,5 @@
         - config_type: tmux
       loop_control:
         loop_var: config_item
-    #- include_tasks: homebrew.yml
+    - include_tasks: homebrew.yml
     - include_tasks: nvim.yml

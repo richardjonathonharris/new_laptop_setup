@@ -72,6 +72,12 @@ call plug#begin("~/.vim/plugged")
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'codechips/coc-svelte', {'do': 'npm install'}
   Plug 'neoclide/coc-solargraph'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lua/telescope.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'airblade/vim-gitgutter'
+  Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -217,7 +223,21 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" coc filetype extensions
+
 let g:coc_global_extensions = [
       \ 'coc-svelte',
       \ 'coc-solargraph',
       \ ]
+
+" telescope mappings
+"
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" rainbow brackets
+
+let g:rainbow_active = 1
+

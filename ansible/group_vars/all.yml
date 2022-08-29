@@ -11,3 +11,5 @@ homebrew_packages:
   - npm
   - go
   - ag
+  - rg
+  - fd
